@@ -18,7 +18,6 @@ my @files_to_keep = qw (
 README.md
 runTrinityDemo.pl
 cleanme.pl
-Trinotate.sqlite
 );                      
 
 
