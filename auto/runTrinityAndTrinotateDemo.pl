@@ -68,7 +68,6 @@ my $workdir = cwd();
 my @tools = qw (Trinity
     bowtie
     samtools
-    igv.sh
 );
  
 {
@@ -336,9 +335,9 @@ if ($AUTO_MODE) {
 
 # load in the gene results
 
-&process_cmd("$trinotate_dir/util/transcript_expression/import_expression_and_DE_results.pl  --sqlite ../Trinotate.sqlite --component_mode  --samples_file ../samples.txt --count_matrix ../Trinity_genes.counts.matrix --fpkm_matrix ../Trinity_genes.TMM.EXPR.matrix", "$checkpoints_dir/Trinotate.load_gene_expr_data.ok");
+&process_cmd("$trinotate_dir/util/transcript_expression/import_expression_and_DE_results.pl  --sqlite Trinotate.sqlite --gene_mode  --samples_file ../samples.txt --count_matrix ../Trinity_genes.counts.matrix --fpkm_matrix ../Trinity_genes.TMM.EXPR.matrix", "$checkpoints_dir/Trinotate.load_gene_expr_data.ok");
 
-&process_cmd("$trinotate_dir/util/transcript_expression/import_expression_and_DE_results.pl --sqlite ../Trinotate.sqlite --component_mode  --samples_file ../samples.txt --DE_dir ../edgeR_gene ", "$checkpoints_dir/Trinotate.load_gene_DE_data.ok");
+&process_cmd("$trinotate_dir/util/transcript_expression/import_expression_and_DE_results.pl --sqlite Trinotate.sqlite --gene_mode  --samples_file ../samples.txt --DE_dir ../edgeR_gene ", "$checkpoints_dir/Trinotate.load_gene_DE_data.ok");
 
 
 print STDERR "\n\n\tCommand-line Demo complete.  Congratulations! :)  Now explore your data via TrinotateWeb\n\n\n\n";
