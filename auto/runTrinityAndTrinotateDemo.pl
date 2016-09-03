@@ -57,7 +57,7 @@ $ENV{PATH} .= ":$trinity_dir";  ## adding it to our PATH setting.
 
 my $trinotate_dir = $ENV{TRINOTATE_HOME} or die "Error, need env var TRINOTATE_HOME set to Trinotate installation directory (note this is different than Trinity) ";
 
-
+$ENV{R_LIBS} = "/home/training/.r-library";
 
 my $OS_type = `uname`;
 
